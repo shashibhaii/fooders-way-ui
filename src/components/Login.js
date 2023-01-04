@@ -8,7 +8,6 @@ const Login=()=>{
     const [username,setUsername]=useState(''); 
     const [password, setPassword]=useState('');
     const [errMsg, setErrMsg]=useState('');
-    const [loginDetails, setDataInput]=useState('');
     const userRef = useRef();
     const auth = useAuth();
     const navigate = useNavigate();
@@ -25,9 +24,8 @@ const Login=()=>{
 
     const submitThis= async (e)=>{
         e.preventDefault();
-        setDataInput({username,password});
         try{
-            const resp = await api.post('/authenticate',JSON.stringify(loginDetails), { headers :{
+            const resp = await api.post('/authenticate',JSON.stringify({username,password}), { headers :{
                 'Content-Type': 'application/json'}});
             if(resp?.data)
             {   
