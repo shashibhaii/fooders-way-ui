@@ -85,13 +85,21 @@ function Login({ setIsauth, setToken }) {
           <div className="ml-4 absolute">
             <i className="fa-solid fa-user text-slate-500" />
           </div>
-          <input className="py-2 pr-4 pl-10 w-full text-sm rounded outline outline-1 outline-slate-300 text-slate-700 placeholder:text-slate-700 focus:outline-1 focus:shadow-md focus:outline-orange-500" type="text" id="username" placeholder="Username" onChange={(e) => setUsername(e.target.value)} value={username} required />
+          <input className="py-2 pr-4 pl-10 w-full text-sm rounded outline outline-1 outline-slate-300 text-slate-700 placeholder:text-slate-700 focus:outline-1 focus:shadow-md focus:outline-orange-500" type="text" id="username" placeholder="Username" onChange={(e) => setUsername(e.target.value)} value={username}  onKeyPress={(e)=>{
+            if(e.key==='Enter'){
+              submit()
+            }
+          }} required />
         </div>
         <div className="flex justify-between items-center">
           <div className="ml-4 absolute">
             <i className="fa-solid fa-lock text-slate-500" />
           </div>
-          <input className="py-2 pl-10 pr-4 w-full text-sm outline outline-1 outline-slate-300 rounded-l text-slate-700 placeholder:text-slate-700 focus:outline-1 focus:shadow-md focus:outline-orange-500" type="password" id="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} required />
+          <input className="py-2 pl-10 pr-4 w-full text-sm outline outline-1 outline-slate-300 rounded-l text-slate-700 placeholder:text-slate-700 focus:outline-1 focus:shadow-md focus:outline-orange-500" type="password" id="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} onKeyPress={(e)=>{
+            if(e.key==='Enter'){
+              submit()
+            }
+          }} required/>
           <button id="hidden-password" className="px-3 py-1.5 outline outline-1 outline-slate-300 rounded-r bg-[#eeeeee]" onClick={viewPassword}>
             <i className="fa-solid fa-eye text-slate-500" />
           </button>
