@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.form-font {
+  font-family: 'Poppins', sans-serif;
+}
+
+@layer utilities {
+  .btn-category {
+    @apply
+    font-medium
+    border-2 rounded-full
+    mx-[4px] my-1 px-2 py-1
+    border-orange-600 text-orange-600
+    hover:bg-orange-600 hover:text-white hover:shadow-lg
+  }
+}
+
+@layer utilities {
+  .btn-category-selected {
+    @apply
+    font-medium
+    border-2 rounded-full
+    mx-[4px] my-1 px-2 py-1
+    border-orange-600 bg-orange-600 text-white
+    hover:shadow-lg
+  }
+}
+
+@layer utilities {
+  .btn-add {
+    @apply
+    rounded
+    px-4 py-2
+    font-medium
+    duration-200
+    bg-orange-500
+    hover:bg-orange-600 hover:shadow-slate-400
+  }
+}
+
+.data-table-scroll-none::-webkit-scrollbar {
+  display: none;
+}
