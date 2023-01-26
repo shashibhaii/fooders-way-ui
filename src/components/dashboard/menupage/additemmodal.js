@@ -62,12 +62,12 @@ function AddItem({ setNew_items, categorieslist, setToastSuccess, setToastDanger
   }
 
   const onClose = () => {
-    setItem('');
-    setPrice('');
-    setIsveg('');
-    setItemDescription('');
-    setChecked1(false);
-    setChecked2(false);
+    // setItem('');
+    // setPrice('');
+    // setIsveg('');
+    // setItemDescription('');
+    // setChecked1(false);
+    // setChecked2(false);
     close();
   }
 

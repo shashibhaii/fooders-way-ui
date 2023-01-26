@@ -126,11 +126,11 @@ function Modify({ close, setToastDanger, setToastSuccess, setAllertmsg, row, set
               </fieldset>
               <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between mb-6">
                 <div className="mb-2 sm:mb-0">
-                  <label htmlFor="small-input" className="block text-sm mb-2 font-medium text-gray-900">Item Price<span className="text-sm">(in rupees: ₹)</span></label>
+                  <label htmlFor="small-input" className="block text-sm mb-2 font-medium text-gray-900">Item Price<span className="text-[12px] text-slate-500"> (rupees: ₹)</span></label>
                   <input type="number" id="small-input" className="block text-sm w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-blue-600" onChange={(e) => setPrice(e.target.value)} value={price} />
                 </div>
                 <div className>
-                  <label htmlFor="small-input" className="block text-sm mb-2 font-medium text-gray-900">Item Discount<span className="text-sm">(in rupees: %)</span></label>
+                  <label htmlFor="small-input" className="block text-sm mb-2 font-medium text-gray-900">Item Discount<span className="text-[12px] text-slate-500"> (percent: %)</span></label>
                   <input type="text" id="small-input" className="block text-sm w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-blue-600" onChange={(e) => setOfferpercentage(e.target.value)} value={offerpercentage} />
                 </div>
               </div>
