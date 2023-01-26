@@ -126,17 +126,17 @@ function Modify({ close, setToastDanger, setToastSuccess, setAllertmsg, row, set
               </fieldset>
               <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between mb-6">
                 <div className="mb-2 sm:mb-0">
-                  <label htmlFor="small-input" className="block text-sm mb-2 font-medium text-gray-900">Item Price</label>
-                  <input type="number" id="small-input" className="block text-sm w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-blue-600" onChange={(e) => setPrice(e.target.value)} placeholder={price} />
+                  <label htmlFor="small-input" className="block text-sm mb-2 font-medium text-gray-900">Item Price<span className="text-sm">(in rupees: ₹)</span></label>
+                  <input type="number" id="small-input" className="block text-sm w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-blue-600" onChange={(e) => setPrice(e.target.value)} value={price} />
                 </div>
                 <div className>
-                  <label htmlFor="small-input" className="block text-sm mb-2 font-medium text-gray-900">Item Discount</label>
-                  <input type="text" id="small-input" className="block text-sm w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-blue-600" onChange={(e) => setOfferpercentage(e.target.value)} placeholder={`${offerpercentage} %`} />
+                  <label htmlFor="small-input" className="block text-sm mb-2 font-medium text-gray-900">Item Discount<span className="text-sm">(in rupees: %)</span></label>
+                  <input type="text" id="small-input" className="block text-sm w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-blue-600" onChange={(e) => setOfferpercentage(e.target.value)} value={offerpercentage} />
                 </div>
               </div>
               <div className>
                 <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900">Item Description</label>
-                <textarea id="message" rows={4} className="text-gray-500 font-medium text-[16px] placeholder:text-[16px] block p-2.5 w-full bg-gray-50 rounded-lg border border-gray-300 focus:outline-blue-600" defaultValue={itemDescription} onChange={(e) => setItemDescription(e.target.value)} />
+                <textarea id="message" rows={4} className="text-gray-500 font-medium text-[16px] placeholder:text-[16px] block p-2.5 w-full bg-gray-50 rounded-lg border border-gray-300 focus:outline-blue-600" value={itemDescription} onChange={(e) => setItemDescription(e.target.value)} />
               </div>
             </div>
             <hr />

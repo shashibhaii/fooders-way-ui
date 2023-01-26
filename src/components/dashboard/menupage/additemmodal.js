@@ -4,7 +4,7 @@ import { authorizedaxios } from '../../../axiosinit';
 
 function AddItem({ setNew_items, categorieslist, setToastSuccess, setToastDanger, setAllertmsg, close }) {
   const [item, setItem] = useState('');
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState('');
   const [isveg, setIsveg] = useState('');
   const [itemDescription, setItemDescription] = useState('');
   const [selectedCategoryid, setSelectedCategoryid] = useState('');
@@ -22,13 +22,12 @@ function AddItem({ setNew_items, categorieslist, setToastSuccess, setToastDanger
       authorizedaxios(context.token, context.businessId).post('/business/add-menu-item', {
         "categoryId": selectedCategoryid,
         "itemName": item,
-        "itemPrice": price,
+        "itemPrice": parseInt(price),
         "isVeg": isveg,
         "itemDescription": itemDescription
       })
         .then((res) => {
           if (res.status === 200) {
-            //console.log(res)
             setNew_items({
               "categoryId": res.data['response'][0].categoryId,
               "id": res.data['response'][0].id,
@@ -39,7 +38,7 @@ function AddItem({ setNew_items, categorieslist, setToastSuccess, setToastDanger
               "itemPrice": res.data['response'][0].itemPrice
             })
             setItem('');
-            setPrice(0);
+            setPrice('');
             setIsveg('');
             setItemDescription('');
             setChecked1(false);
@@ -64,7 +63,7 @@ function AddItem({ setNew_items, categorieslist, setToastSuccess, setToastDanger
 
   const onClose = () => {
     setItem('');
-    setPrice(0);
+    setPrice('');
     setIsveg('');
     setItemDescription('');
     setChecked1(false);
