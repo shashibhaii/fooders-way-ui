@@ -77,6 +77,12 @@ function Table({ setToastDanger, setToastSuccess, setAllertmsg, setNew_items, ti
           setSubitemlist(s => [...s, items[i]]);
         }
       }
+      if (search) {
+        const result = items.filter(event => {
+          return event.itemName.toLowerCase().match(search.toLowerCase());
+        });
+        setFilteredsearch(result);
+      }
     }
   }
 
@@ -99,6 +105,8 @@ function Table({ setToastDanger, setToastSuccess, setAllertmsg, setNew_items, ti
       }
     }
   }
+
+
 
   useLayoutEffect(() => {
     setItemlist([]);
